@@ -1,0 +1,1 @@
+This driver is applicable to the UDP3305S series models.

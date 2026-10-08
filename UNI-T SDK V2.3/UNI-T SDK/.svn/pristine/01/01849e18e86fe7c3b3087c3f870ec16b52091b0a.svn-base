@@ -1,0 +1,1966 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ucics</name>
+    </assembly>
+    <members>
+        <member name="T:uci.Model.unit.UnitParam">
+            <summary>
+            物理单位信息
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.UnitParam.Type">
+            <summary>
+            单位类型，比如Time、Freq等。具体定义见文档。
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.UnitParam.Scale">
+            <summary>
+            量级，比如k、n，p，M等。具体定义见文档。
+            </summary>
+        </member>
+        <member name="T:uci.Model.unit.Scale">
+            <summary>
+            物理单位量级
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Scale.p">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Scale.n">
+            <summary>
+            /
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Scale.μ">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Scale.m">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Scale.STD">
+            <summary>
+            标准单位
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Scale.K">
+            <summary>
+            K
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Scale.M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Scale.G">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Scale.T">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:uci.Model.unit.Type">
+            <summary>
+            物理单位类型
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.Invalid">
+            <summary>
+            无效的类型
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.Freq">
+            <summary>
+            频率（Hz）
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.Time">
+            <summary>
+            时间（s）
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.Area">
+            <summary>
+            面积(Vs)
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.SampleRate">
+            <summary>
+            采样率（Sa/s）
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.Point">
+            <summary>
+            点数（Sa）
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.VPP">
+            <summary>
+            峰峰值（V）
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.Voltage">
+            <summary>
+            电压
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.Current">
+            <summary>
+            电流(A)
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.DB">
+            <summary>
+            db(dB)
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.VV">
+             <summary>
+            VV （VV）
+             </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.Percent">
+            <summary>
+            百分比（%）
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.Degree">
+            <summary>
+            度数（°）
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.Watt">
+            <summary>
+            瓦特，功率（W）
+            </summary>
+        </member>
+        <member name="F:uci.Model.unit.Type.Unknown">
+            <summary>
+            未知单位（U）
+            </summary>
+        </member>
+        <member name="T:uci.Model.mea.MeaValue">
+            <summary>
+             物理量数值 
+            </summary>
+            <remarks>
+            4Byte align -&gt; 8Bytes, 
+            所有示波器都通过指令"mea:all?;"读取参数测量数据。 
+            读取到的就是  MeaValue v[50]  （固定长度）， 
+            各参数的位置索引由<see cref="T:uci.Model.mea.MeaParam"/>定义。
+            </remarks>
+        </member>
+        <member name="F:uci.Model.mea.MeaValue.Value">
+            <summary>
+            测量值
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaValue.Unit">
+            <summary>
+            物理单位
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaValue.IsValid">
+            <summary>
+            是否有效。  0 表示无效； 1表示有效。
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaValue.IsExist">
+            <summary>
+            是否存在。  0 表示存在； 1表示不存在。
+            </summary>
+        </member>
+        <member name="T:uci.Model.mea.MeaParam">
+            <summary>
+            参数测量数据包的通用定义。 
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.MAX">
+            <summary>
+            最大值		
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.MIN">
+            <summary>
+            最小值		
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.HIGH">
+            <summary>
+            High(Top)-高电平(顶端值)		
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.MIDDLE">
+            <summary>
+            Middle-中间值	
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.LOW">
+            <summary>
+            Low(Bottom) - 低电平(底端值)	
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.PKPK">
+            <summary>
+            VPP-峰峰值		
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.AMP">
+            <summary>
+            幅度值	
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.MEAN">
+            <summary>
+            平均值	
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.CYCMEAN">
+            <summary>
+            周期平均值
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.RMS">
+            <summary>
+            均方根
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.CYCRMS">
+            <summary>
+            周期均方值		
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.AREA">
+            <summary>
+            面积		
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.CYCAREA">
+            <summary>
+            周期面积		
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.OVERSHOOT">
+            <summary>
+            过冲		
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.PRESHOOT">
+            <summary>
+            预冲
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.PERIOD">
+            <summary>
+            周期		
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.FREQ">
+            <summary>
+            频率	
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.RISE_TIME">
+            <summary>
+            上升时间	
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.FALL_TIME">
+            <summary>
+            下降时间	
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.PWIDTH">
+            <summary>
+            正脉宽
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.NWIDTH">
+            <summary>
+            负脉宽
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.PDUTY">
+            <summary>
+            正占空比		
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.NDUTY">
+            <summary>
+            负占空比	
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.RISEDELAY">
+            <summary>
+            上升延时		
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.FALLDELAY">
+            <summary>
+            下升延时
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.PHASE">
+            <summary>
+            相位		
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.FRR">
+            <summary>
+            FRR
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.FRF">
+            <summary>
+            FRF
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.FFR">
+            <summary>
+            FFR
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.FFF">
+            <summary>
+            FFF
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.LRF">
+            <summary>
+            LRF
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.LRR">
+            <summary>
+            LRR
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.LFR">
+            <summary>
+            LFR
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.LFF">
+            <summary>
+            LFF
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.BURST_WIDTH">
+            <summary>
+            突发脉冲
+            </summary>
+        </member>
+        <member name="F:uci.Model.mea.MeaParam.MAX_COUNT">
+            <summary>
+            固定位50个参数
+            </summary>
+        </member>
+        <member name="T:uci.Model.DDS10M_LED_MaskBit">
+            <summary>
+            b0 : SYNC; b1 : channel(CH1); b2 : Trigger
+            </summary>
+        </member>
+        <member name="F:uci.Model.DDS10M_LED_MaskBit.SYNC">
+            <summary>
+            SYNC Key
+            </summary>
+        </member>
+        <member name="F:uci.Model.DDS10M_LED_MaskBit.Channel">
+            <summary>
+            Channel Key
+            </summary>
+        </member>
+        <member name="F:uci.Model.DDS10M_LED_MaskBit.Trigger">
+            <summary>
+            Trigger Key
+            </summary>
+        </member>
+        <member name="T:uci.Model.Pointer">
+            <summary>
+            模拟C/C++的堆内存的操作：申请、释放、转换
+            </summary>
+        </member>
+        <member name="M:uci.Model.Pointer.#ctor(System.Int32)">
+            <summary>
+            创建指定大小（bytes）的非托管内存空间
+            </summary>
+            <param name="size"></param>
+        </member>
+        <member name="M:uci.Model.Pointer.#ctor(System.Byte[])">
+            <summary>
+            创建基于所给字节数组的非托管内存空间。默认数据会被拷贝到非托管内存空间。
+            </summary>
+            <param name="data"> 托管字节数组 </param>
+        </member>
+        <member name="M:uci.Model.Pointer.#ctor(System.Int32[],System.Int32,System.Int32)">
+            <summary>
+             创建基于所给整形数据的非托管内存空间。默认数据会被拷贝到非托管内存空间。
+            </summary>
+            <param name="data">托管整形数组</param>
+            <param name="iStart"> 起始拷贝位置 needCopy = true 时有效  </param>
+            <param name="cnt">拷贝数量</param>   
+        </member>
+        <member name="M:uci.Model.Pointer.#ctor(System.Type,System.Int32)">
+            <summary>
+            allocate storage for count elements of type ty
+            </summary>
+            <param name="ty"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:uci.Model.Pointer.#ctor(System.Object,System.Boolean)">
+            <summary>
+            创建基于所给对象数据的非托管内存空间
+            </summary>
+            <param name="obj">托管对象数据</param>
+            <param name="needCopy"> true ： 拷贝托管字节数组的数据到非托管内存空间； false ： 不拷贝</param>
+        </member>
+        <member name="M:uci.Model.Pointer.op_Explicit(uci.Model.Pointer)~System.IntPtr">
+            <summary>
+            提供Pointer到IntPtr的运算符。
+            </summary>
+            <param name="p">Pointer类型对象</param>
+            <returns>IntPtr</returns>
+        </member>
+        <member name="M:uci.Model.Pointer.Finalize">
+            <summary>
+            析构器
+            </summary>
+        </member>
+        <member name="M:uci.Model.Pointer.ToObject(System.Object)">
+            <summary>
+            将内存数据转换所给的结构体类型数据。
+            </summary>
+            <param name="obj">要转换的结构体</param>
+            <returns>要转换的结构体</returns>
+        </member>
+        <member name="F:uci.Model.Pointer._ptr">
+            <summary>
+            指向非托管内存的指针
+            </summary>
+        </member>
+        <member name="P:uci.Model.Pointer.Ptr">
+            <summary>
+            非托管内存空间的地址
+            </summary>
+        </member>
+        <member name="P:uci.Model.Pointer.Size">
+            <summary>
+            非托管内存空间的大小（bytes）
+            </summary>
+        </member>
+        <member name="T:uci.COMType">
+            <summary>
+            通信方式
+            </summary>
+        </member>
+        <member name="F:uci.COMType.USB">
+            <summary>
+            USB通信
+            </summary>
+        </member>
+        <member name="F:uci.COMType.LAN">
+            <summary>
+            LAN通信
+            </summary>
+        </member>
+        <member name="F:uci.COMType.COM">
+            <summary>
+            串口通信
+            </summary>
+        </member>
+        <member name="T:uci.SGCHNo">
+            <summary>
+            信号源的通道号
+            </summary>
+        </member>
+        <member name="F:uci.SGCHNo.CH1">
+            <summary>
+            通道1的编号
+            </summary>
+        </member>
+        <member name="F:uci.SGCHNo.CH2">
+            <summary>
+            通道2的编号
+            </summary>
+        </member>
+        <member name="F:uci.SGCHNo.CHALL">
+            <summary>
+            代表所有通道的编号
+            </summary>
+        </member>
+        <member name="F:uci.SGCHNo.CHNONE">
+            <summary>
+            非通道编号
+            </summary>
+        </member>
+        <member name="T:uci.VSwitch">
+            <summary>
+            开关状态，占用1个字节。
+            </summary>
+        </member>
+        <member name="F:uci.VSwitch.OFF">
+            <summary>
+            关闭状态
+            </summary>
+        </member>
+        <member name="F:uci.VSwitch.ON">
+            <summary>
+            打开状态
+            </summary>
+        </member>
+        <member name="T:uci.UciStatus">
+            <summary>
+            UCI所有接口返回的错误状态编码。如果接口返回小于0，则可以从本定义中找到对应的解释。
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.NoError">
+            <summary>
+            没有任何错误
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.UCI_ERR">
+            <summary>
+            错误（基础编码，所有错误码都在这个编码基础上定义）
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.InitResourceError">
+            <summary>
+            资源初始化错误
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Invalid_Session">
+            <summary>
+             无效的会话
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Timeout">
+            <summary>
+            操作超时 
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Failed">
+            <summary>
+            操作失败
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Unsupported">
+            <summary>
+            不支持的操作
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Insufficient_Memory">
+            <summary>
+            内存空间不足
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Busy">
+            <summary>
+            系统繁忙，无法响应
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.COMExpection">
+            <summary>
+            通信异常，不可逆！
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Unknown">
+            <summary>
+            未知的错误
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Connect_InvalidAddress">
+            <summary>
+            建立连接的字符串地址格式错误
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Connect_NotBuild">
+            <summary>
+            连接还未建立
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Connect_Break">
+            <summary>
+            连接已断开
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Connect_Unsupported_COMType">
+            <summary>
+            不支持的通信方式
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Device_NoFound">
+            <summary>
+            未发现指定的设备
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Device_Unsupported">
+            <summary>
+            不支持的设备
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Device_QueryFirst">
+            <summary>
+            需要先执行查询设备的操作
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Query_LANNodesFailed">
+            <summary>
+            查询网络设备失败
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.AddrValid_AfterQueryDeviceOper">
+            <summary>
+            USB设备地址只在执行查询设备操作后才有效，
+            </summary>
+            <remarks>
+            从UCI库导出的USB设备地址，只是一个列表索引，不是真正的设备地址。
+            </remarks>
+        </member>
+        <member name="F:uci.UciStatus.UDisk_NotFound">
+            <summary>
+            未发现U盘接入
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Key_Locked">
+            <summary>
+            按键已经锁定
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.CMD_InvalidFormat">
+            <summary>
+            命令格式错误
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.CMD_OnlySupportSingle">
+            <summary>
+            只支持单条命令
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.CMD_OnlySupportSingleAttr">
+            <summary>
+            一条命令只支持一个属性
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.CMD_Unsupported">
+            <summary>
+             不支持的命令
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.CMD_SendFailed">
+            <summary>
+            发送命令失败
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.CMD_Invalid_ProtocolFormat">
+            <summary>
+            协议数据格式错误
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.CMD_WriteFileToFlash_Failed">
+            <summary>
+            设备端写文件到flash失败！
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.CMD_NoFound_Valid_Reply_Data">
+            <summary>
+            未发现有效数据
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.CMD_Error_Message">
+            <summary>
+            命令消息错误，请命令参数是否符合协议
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.CMD_Invalid_Expression">
+            <summary>
+            无效的表达式
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Args_Invalid">
+            <summary>
+            参数错误
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Args_MemoryTooSmall">
+            <summary>
+            参数提供的空间太小
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Args_FileNameTooLong">
+            <summary>
+            所提供的文件名太长(最长50个字节)
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Args_DataLenNotMatch">
+            <summary>
+            参数所给的数据大小与协议不匹配(防止数据错误)
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Data_Overflow">
+            <summary>
+            数字溢出
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Data_OutRange">
+            <summary>
+            超出范围
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Data_NotReadEnoughLenth">
+            <summary>
+            数据未全部读取完
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Data_ECC_Failed">
+            <summary>
+            数据校验失败
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Data_Invalid">
+            <summary>
+            无效的数据
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Data_Zip_Error">
+            <summary>
+            数据压缩失败
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Data_UnZip_Error">
+            <summary>
+            数据解压缩失败
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Data_Transfer_Error">
+            <summary>
+            数据传输失败
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.Data_Transfer_Break">
+            <summary>
+            数据传输失败
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_AccessDenied">
+            <summary>
+            拒绝访问
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_GenericException">
+            <summary>
+            An unspecified error occurred.
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_NotFound">
+            <summary>
+             The file could not be located.	
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_BadPath">
+            <summary>
+            All or part of the path is invalid
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_TooManyOpenFiles">
+            <summary>
+            The permitted number of open files was exceeded.
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_InvalidFile">
+            <summary>
+            There was an attempt to use an invalid file handle
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_RemoveCurrentDir">
+            <summary>
+            The current working directory cannot be removed
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_DirectoryFull">
+            <summary>
+            There are no more directory entries
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_BadSeek">
+            <summary>
+            There was an error trying to set the file pointer
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_HardIO">
+            <summary>
+            There was a hardware error
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_SharingViolation">
+            <summary>
+             SHARE.EXE was not loaded, or a shared region was locked
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_LockViolation">
+            <summary>
+            There was an attempt to lock a region that was already locked
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_DiskFull">
+            <summary>
+            The disk is full 
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_EndOfFile">
+            <summary>
+             The end of file was reached
+            </summary>
+        </member>
+        <member name="F:uci.UciStatus.File_SaveToDiskFailed">
+            <summary>
+            写文件到磁盘失败
+            </summary>
+        </member>
+        <member name="T:uci.ARBWriteMode">
+            <summary>
+            信号源任意波下载方式
+            </summary>
+        </member>
+        <member name="F:uci.ARBWriteMode.Carrier">
+            <summary>
+            以载波方式加载
+            </summary>
+        </member>
+        <member name="F:uci.ARBWriteMode.ModWave">
+            <summary>
+            以调制波方式加载
+            </summary>
+        </member>
+        <member name="F:uci.ARBWriteMode.Disk">
+            <summary>
+            将ARB文件写到Flash.
+            </summary>
+        </member>
+        <member name="T:uci.RParams">
+            <summary>
+            UCI读接口用的读参数。
+            </summary>
+        </member>
+        <member name="F:uci.RParams.CMDString">
+            <summary>
+             命令字符串，以'\0'结尾. 具体格式见文档；	
+            </summary>
+        </member>
+        <member name="F:uci.RParams.RetCount">
+            <summary>
+            返回的数据量数据，具体意义视具体命令而定；	
+            </summary>
+        </member>
+        <member name="F:uci.RParams.TimeOut">
+            <summary>
+            读超时
+            </summary>
+        </member>
+        <member name="F:uci.RParams.Data">
+            <summary>
+            附加数据,大多数情况下是不需要的，可设置为IntPtr.Zero.
+            </summary>
+        </member>
+        <member name="F:uci.RParams.DataSize">
+            <summary>
+            附加数据大小
+            </summary>
+        </member>
+        <member name="T:uci.WParams">
+            <summary>
+            UCI写接口的写参数
+            </summary>
+        </member>
+        <member name="F:uci.WParams.CMDString">
+            <summary>
+            命令字符串，以'\0'结尾. 具体格式见文档；	
+            </summary>       
+        </member>
+        <member name="F:uci.WParams.RetCount">
+            <summary>
+            返回的数据量数据，具体意义视具体命令而定；	
+            </summary>
+        </member>
+        <member name="F:uci.WParams.TimeOut">
+            <summary>
+            超时
+            </summary>
+        </member>
+        <member name="T:uci.CommandParams">
+            <summary>
+            接口SendCommand使用的参数
+            </summary>
+        </member>
+        <member name="F:uci.CommandParams.CMDString">
+            <summary>
+            命令字符串，以'\0'结尾. 具体格式见文档；	
+            </summary>
+        </member>
+        <member name="F:uci.CommandParams.Param1">
+            <summary>
+            命令参数1
+            </summary>
+        </member>
+        <member name="F:uci.CommandParams.Param2">
+            <summary>
+            命令参数2
+            </summary>
+        </member>
+        <member name="F:uci.CommandParams.TimeOut">
+            <summary>
+            超时
+            </summary>
+        </member>
+        <member name="T:uci.ARBFileParam">
+            <summary>
+            写任意波文件的参数
+            </summary>
+        </member>
+        <member name="F:uci.ARBFileParam.CH">
+            <summary>
+            通道号，一般CH1=0，依次类推
+            </summary>
+        </member>
+        <member name="F:uci.ARBFileParam.Mode">
+            <summary>
+            任意波(ARB)加载方式
+            </summary>
+        </member>
+        <member name="T:uci.FileParams">
+            <summary>
+            写文件的参数，2个Bytes.（模拟C中的联合体）
+            </summary>
+        </member>
+        <member name="F:uci.FileParams.Data">
+            <summary>
+            预留的数据段
+            </summary>
+        </member>
+        <member name="F:uci.FileParams.ARB">
+            <summary>
+            任意波（ARB）文件参数
+            </summary>
+        </member>
+        <member name="T:uci.WFileParams">
+            <summary>
+            接口WriteFromFile的接口参数。
+            </summary>
+        </member>
+        <member name="F:uci.WFileParams.CMDString">
+            <summary>
+            命令字符串，以'\0'结尾. 具体格式见文档；	
+            </summary>
+        </member>
+        <member name="F:uci.WFileParams.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="F:uci.WFileParams.TimeOut">
+            <summary>
+            要写入的文件长度(=0表示全部写入)
+            </summary> 
+        </member>
+        <member name="T:uci.RFileParams">
+            <summary>
+            接口ReadToFile使用的参数
+            </summary>
+        </member>
+        <member name="F:uci.RFileParams.CMDString">
+            <summary>
+            命令字符串，以'\0'结尾. 具体格式见文档；	
+            </summary>
+        </member>
+        <member name="F:uci.RFileParams.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="F:uci.RFileParams.TimeOut">
+            <summary>
+            要写入的文件长度(=0表示全部写入)
+            </summary>
+        </member>
+        <member name="F:uci.RFileParams.FilePathFinal">
+            <summary>
+            最终输出文件的路径
+            </summary>
+        </member>
+        <member name="T:uci.LEDStatus">
+            <summary>
+            设备按键LED状态数据
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.Noise">
+            <summary>
+            Noise按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.UTILTY">
+            <summary>
+            UTILTY按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.STORGE">
+            <summary>
+            STORGE按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.RAMP">
+            <summary>
+            RAMP按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.PULSE">
+            <summary>
+            PULSE按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.COUNTER">
+            <summary>
+            COUNTER按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.USER">
+            <summary>
+            USER按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.DIGTAL">
+            <summary>
+            DIGTAL按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.HARMONIC">
+            <summary>
+            HARMONIC按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.DC">
+            <summary>
+            DC按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.TRGGER">
+            <summary>
+            TRGGER按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.CH2">
+            <summary>
+            CH2按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.SWAPCH">
+            <summary>
+            SWAPCH按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.ARB">
+            <summary>
+            ARB按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.CH1">
+            <summary>
+            CH1按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.SINE">
+            <summary>
+            SINE按键LED开关状态
+            </summary>
+        </member>
+        <member name="F:uci.LEDStatus.SQUARE">
+            <summary>
+            SQUARE按键LED开关状态
+            </summary>
+        </member>
+        <member name="T:uci.QueryNodeType">
+            <summary>
+            通信节点类型
+            </summary>
+            <remarks>
+            在QParams中是按位与，在Node中取的是enum值。
+            </remarks>
+        </member>
+        <member name="F:uci.QueryNodeType.LAN">
+            <summary>
+            网络设备类型
+            </summary>
+        </member>
+        <member name="F:uci.QueryNodeType.USB">
+            <summary>
+            USB设备类型
+            </summary>
+        </member>
+        <member name="T:uci.USBDescriptor">
+            <summary>
+            USB设备的描述符
+            </summary>
+        </member>
+        <member name="F:uci.USBDescriptor.PID">
+            <summary>
+            PID
+            </summary>
+        </member>
+        <member name="F:uci.USBDescriptor.VID">
+            <summary>
+            VID
+            </summary>
+        </member>
+        <member name="F:uci.USBDescriptor.Addr">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="T:uci.u_Field">
+            <summary>
+            4字段数据类型
+            </summary>
+        </member>
+        <member name="F:uci.u_Field.f1">
+            <summary>
+            字段1
+            </summary>
+        </member>
+        <member name="F:uci.u_Field.f2">
+            <summary>
+            字段2
+            </summary>
+        </member>
+        <member name="F:uci.u_Field.f3">
+            <summary>
+            字段3
+            </summary>
+        </member>
+        <member name="F:uci.u_Field.f4">
+            <summary>
+            字段4
+            </summary>
+        </member>
+        <member name="T:uci.u_IPAddr">
+            <summary>
+            IP地址
+            </summary>
+            <remarks>
+            填充顺序为 f1(192).f2(168).f3(1).f4(253) - 小端模式
+            </remarks>
+        </member>
+        <member name="F:uci.u_IPAddr.Fields">
+            <summary>
+            分字段存取
+            </summary>
+        </member>
+        <member name="F:uci.u_IPAddr.Addr">
+            <summary>
+            32为整数表示的IP地址
+            </summary>
+        </member>
+        <member name="T:uci.LANDescriptor">
+            <summary>
+            LAN口通信的设备描述符
+            </summary>
+        </member>
+        <member name="F:uci.LANDescriptor.IP">
+            <summary>
+            IP地址(字符串类型)
+            </summary>
+        </member>
+        <member name="F:uci.LANDescriptor.Addr">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="F:uci.LANDescriptor.Port">
+            <summary>
+             网络端口(TCPIP连接用的端口号)
+            </summary>
+        </member>
+        <member name="T:uci.Node">
+            <summary>
+            查询到的设备节点的参数
+            </summary>
+        </member>
+        <member name="F:uci.Node.Type">
+            <summary>
+            通信接口方式
+            </summary>
+        </member>
+        <member name="F:uci.Node.Name">
+            <summary>
+            设备名 
+            </summary>
+        </member>
+        <member name="F:uci.Node.DevType">
+            <summary>
+            设备类型( 信号源 = SG, 示波器 = DSO, UPO = UPO;)
+            </summary>
+        </member>
+        <member name="F:uci.Node.LAN">
+            <summary>
+            LAN口参数
+            </summary>
+        </member>
+        <member name="F:uci.Node.USB">
+            <summary>
+             USB接口参数
+            </summary>
+        </member>
+        <member name="F:uci.Node.UCIAddr">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="F:uci.Node.SN">
+            <summary>
+            序列号
+            </summary>
+        </member>
+        <member name="F:uci.Node.Status">
+            <summary>
+            设备状态
+            </summary>
+        </member>
+        <member name="F:uci.Node.IDN">
+            <summary>
+            设备显示名称
+            </summary>
+        </member>
+        <member name="T:uci.COMPort">
+            <summary>
+            串口描述
+            </summary>
+        </member>
+        <member name="F:uci.COMPort.FriendlyName">
+            <summary>
+            友好名称
+            </summary>
+        </member>
+        <member name="F:uci.COMPort.Port">
+            <summary>
+            端口号
+            </summary>
+        </member>
+        <member name="T:uci.QParams">
+            <summary>
+            查询参数
+            </summary>
+        </member>
+        <member name="F:uci.QParams.Type">
+            <summary>
+            要查询的节点类型，按位与，数据取自QueryNodeType定义
+            eg：　QueryNodeType.USB | QueryNodeType.LAN
+            </summary>
+        </member>
+        <member name="F:uci.QParams.PortCount">
+            <summary>
+            Ports的长度
+            </summary>
+        </member>
+        <member name="F:uci.QParams.Ports">
+            <summary>
+            端口集，指向int类型；
+            </summary>
+        </member>
+        <member name="F:uci.QParams.PVIDCount">
+            <summary>
+            PVID数据的长度
+            </summary>
+        </member>
+        <member name="F:uci.QParams.PVID">
+            <summary>
+            存放PID和VID信息的指向INT类型的缓冲区地址， 
+            int 类型对应的格式 ：PID(高16bit) + VID(低16bit)
+            </summary>
+        </member>
+        <member name="F:uci.QParams.CMDString">
+            <summary>
+            查询字符串，nullptr时表示查询所有设备，否则查询指定设备名的设备。
+            </summary>
+        </member>
+        <member name="T:uci.EUCIMSG">
+            <summary>
+            UCI使用的消息类型
+            </summary>
+        </member>
+        <member name="F:uci.EUCIMSG.CONNECT_CLOSED">
+            <summary>
+            与设备建立的连接已经断开        
+            </summary>
+            <remarks>
+            目前只支持LAN口访问的连接的侦测
+            wParams LAN : 端口号(十进制)；
+            Reserved LAN : IP 地址
+            </remarks>
+        </member>
+        <member name="F:uci.EUCIMSG.FILE_TRANSFER">
+            <summary>
+            文件传输消息
+            </summary>
+            <remarks>
+            wParams 总帧数； 
+            lParams 帧计数； -1 ： 开始传输； [0,wParams)传输中， 等于wParams传输结束-> 
+            UCIMSGProc return -1 ： 表示中断传输.
+            </remarks>
+        </member>
+        <member name="F:uci.EUCIMSG.DEVICE_NOTIFY">
+            <summary>
+            USB插拔消息
+            </summary>
+            <remarks>
+            wParams : 使用低16位，其中，高8位为pid，低8位为vid；
+            lParams :  事件类型， 移除 = 0， 插入 = 1；
+            Reserved : USB插入移除事件的设备的设备名
+            </remarks>
+        </member>
+        <member name="T:uci.USBChangeEvent">
+            <summary>
+            USB设备事件
+            </summary>
+        </member>
+        <member name="F:uci.USBChangeEvent.Removed">
+            <summary>
+            USB 设备移除事件
+            </summary>
+        </member>
+        <member name="F:uci.USBChangeEvent.Attach">
+            <summary>
+            USB 设备接入事件
+            </summary>
+        </member>
+        <member name="T:uci.UCIMSG">
+            <summary>
+            UCI 消息数据
+            </summary>
+        </member>
+        <member name="F:uci.UCIMSG.Session">
+            <summary>
+            发送消息的会话ID
+            </summary>
+        </member>
+        <member name="F:uci.UCIMSG.Message">
+            <summary>
+            UCI消息，按EUCIMSG解析
+            </summary>
+        </member>
+        <member name="F:uci.UCIMSG.wParams">
+            <summary>
+            消息参数，每个消息的使用意义不一样
+            </summary>
+        </member>
+        <member name="F:uci.UCIMSG.lParams">
+            <summary>
+            消息参数，每个消息的使用意义不一样
+            </summary>
+        </member>
+        <member name="F:uci.UCIMSG.Reserved">
+            <summary>
+            保留字段，每个消息的使用意义不一样
+            </summary>
+        </member>
+        <member name="T:uci.PhyValue">
+            <summary>
+            带单位的数值
+            </summary>
+        </member>
+        <member name="F:uci.PhyValue.Value">
+            <summary>
+            数值
+            </summary>
+        </member>
+        <member name="F:uci.PhyValue.Unit">
+            <summary>
+            单位量级
+            </summary>
+        </member>
+        <member name="T:uci.UValue">
+            <summary>
+            带单位的数值
+            </summary>
+        </member>
+        <member name="F:uci.UValue.Value">
+            <summary>
+            数值
+            </summary>
+        </member>
+        <member name="F:uci.UValue.Unit">
+            <summary>
+            单位量级
+            </summary>
+        </member>
+        <member name="T:uci.DMFRM">
+            <summary>
+            万用表和毫伏表数据帧
+            </summary>
+        </member>
+        <member name="F:uci.DMFRM.MainDisp">
+            <summary>
+            主显字符串(20个字符)
+            </summary>
+        </member>
+        <member name="F:uci.DMFRM.AuxDisp">
+            <summary>
+            副显字符串或(20个字符)
+            </summary>
+        </member>
+        <member name="F:uci.DMFRM.MainValue">
+            <summary>
+            主显数值（8Bytes）
+            </summary>
+        </member>
+        <member name="F:uci.DMFRM.AuxValue">
+            <summary>
+            副显数值（8Bytes）
+            </summary>      
+        </member>
+        <member name="F:uci.DMFRM.Flags">
+            <summary>
+            标记位（8Bytes）
+            </summary>  
+        </member>
+        <member name="T:uci.Session">
+            <summary>
+            UCI会话（与设备建立会话）
+            本接口是<seealso cref="T:uci.UCIInterop"/>的面向对象封装版本。
+            会在UCISession对象释放时自动关闭会话，并做所有资源清理，且提供若干
+            实用接口。
+            </summary>
+        </member>
+        <member name="M:uci.Session.#ctor(System.Boolean)">
+            <summary>
+            构造器
+            </summary>
+        </member>
+        <member name="M:uci.Session.Finalize">
+            <summary>
+            析构器
+            </summary>
+        </member>
+        <member name="M:uci.Session.Open(System.String,System.UInt32)">
+            <summary>
+            打开设备，建立会话。
+            </summary>
+            <param name="addr">设备地址。可以通过查询接口获取，也可以通过查看文档获取。</param>
+            <param name="timeout">超时。在该时间内指令未完成，就返回超时错误！</param>
+            <returns>
+            查看<seealso cref="M:uci.Session.GetLastError"/>说明。
+            </returns>
+        </member>
+        <member name="M:uci.Session.Close">
+            <summary>
+            关闭会话
+            </summary>
+        </member>
+        <member name="M:uci.Session.GetLastError">
+            <summary>
+            获取错误描述信息。
+            </summary>
+            <returns>
+            通过该接口获取错误码对应的错误描述信息， 错误码可以查看<see cref="T:uci.UciStatus"/>。
+            所有错误码都是小于0的整数。
+            </returns>    
+        </member>
+        <member name="M:uci.Session.Write(System.String,System.Byte[],System.UInt32)">
+            <summary>
+            写数据
+            </summary>
+            <param name="msg">指令字符串</param>
+            <param name="data">
+            要写到设备的字节流数据，如果是内置类型（如int等），
+            可以使用BitConverter.GetBytes转换
+            </param>     
+            <param name="timeout">指令执行超时，在该时间内指令为完成，就返回！</param>
+            <returns>
+            查看<seealso cref="M:uci.Session.GetLastError"/>说明。
+            </returns>
+        </member>
+        <member name="M:uci.Session.Write(System.String,System.UInt32)">
+            <summary>
+            写数据
+            </summary>
+            <param name="msg">指令字符串</param>
+            <param name="timeout">指令执行超时，在该时间内指令为完成，就返回！</param>
+            <returns>
+            查看<seealso cref="M:uci.Session.GetLastError"/>说明。
+            </returns>
+        </member>
+        <member name="M:uci.Session.Write(System.String,System.Int16,System.UInt32)">
+            <summary>
+            写数据(short类型)，是<see cref="M:uci.Session.Write(System.String,System.Byte[],System.UInt32)"/>的封装版本
+            </summary>
+            <param name="msg">指令字符串</param>
+            <param name="v">short 类型数据</param>
+            <param name="timeout">超时</param>
+            <returns>
+            查看<seealso cref="M:uci.Session.GetLastError"/>说明。
+            </returns>     
+        </member>
+        <member name="M:uci.Session.Write(System.String,System.Double,System.UInt32)">
+            <summary>
+            写数据(double类型)，是<see cref="M:uci.Session.Write(System.String,System.Byte[],System.UInt32)"/>的封装版本
+            </summary>
+            <param name="msg">指令字符串</param>
+            <param name="v">double 类型数据</param>
+            <param name="timeout">超时</param>
+            <returns>
+            查看<seealso cref="M:uci.Session.GetLastError"/>说明。
+            </returns>
+        </member>
+        <member name="M:uci.Session.Write(System.String,System.Int32,System.UInt32)">
+            <summary>
+            写数据(int类型)，是<see cref="M:uci.Session.Write(System.String,System.Byte[],System.UInt32)"/>的封装版本
+            </summary>
+            <param name="msg">指令字符串</param>
+            <param name="v">int 类型数据</param>
+            <param name="timeout">超时</param>
+            <returns>
+            查看<seealso cref="M:uci.Session.GetLastError"/>说明。
+            </returns>
+        </member>
+        <member name="M:uci.Session.Write``1(System.String,``0,System.UInt32)">
+            <summary>
+            写数据（任何类型），是<see cref="M:uci.Session.Write(System.String,System.Byte[],System.UInt32)"/>的封装版本
+            </summary>
+            <typeparam name="T">数据类型，struct 或者内置类型</typeparam>
+            <param name="msg">指令字符串</param>
+            <param name="v">写入的数据</param>
+            <param name="timeout">超时</param>
+            <returns>
+            查看<seealso cref="M:uci.Session.GetLastError"/>说明。
+            </returns>
+        </member>
+        <member name="M:uci.Session.Read(System.String,System.Byte[],System.UInt32)">
+            <summary>
+            读数据的基础接口。
+            </summary>
+            <param name="msg">指令字符串</param>
+            <param name="data">接收数据的缓冲区</param>
+            <param name="timeout">超时</param>
+            <returns>
+            查看<seealso cref="M:uci.Session.GetLastError"/>说明。
+            </returns>
+        </member>
+        <member name="M:uci.Session.Read(System.String,System.Double@,System.UInt32)">
+            <summary>
+             读数据（dobule类型）。是<see cref="M:uci.Session.Read(System.String,System.Byte[],System.UInt32)"/>的封装版本
+            </summary>
+            <param name="msg">指令字符串</param>
+            <param name="v">要读取的double类型数据</param>
+            <param name="timeout">超时</param>
+            <returns>
+            查看<seealso cref="M:uci.Session.GetLastError"/>说明。
+            </returns>
+        </member>
+        <member name="M:uci.Session.Read(System.String,System.Int32@,System.UInt32)">
+            <summary>
+            读数据（int类型）。是<see cref="M:uci.Session.Read(System.String,System.Byte[],System.UInt32)"/>的封装版本
+            </summary>
+            <param name="msg">指令字符串</param>
+            <param name="v">要读取的int类型数据</param>
+            <param name="timeout">超时</param>
+            <returns>
+            查看<seealso cref="M:uci.Session.GetLastError"/>说明。
+            </returns>
+        </member>
+        <member name="M:uci.Session.Read(System.String,System.Int16@,System.UInt32)">
+            <summary>
+            读数据（short类型）。是<see cref="M:uci.Session.Read(System.String,System.Byte[],System.UInt32)"/>的封装版本
+            </summary>
+            <param name="msg">指令字符串</param>
+            <param name="v">要读取的short类型数据</param>
+            <param name="timeout">超时</param>
+            <returns>
+            查看<seealso cref="M:uci.Session.GetLastError"/>说明。
+            </returns>
+        </member>
+        <member name="M:uci.Session.Read``1(System.String,``0@,System.UInt32)">
+            <summary>
+            读取数据（泛型版本，支持内置类型、结构体数据）(结构体大小必须是确定的)
+            </summary>
+            <typeparam name="T">内置类型或结构体类型,必须是确定的已经序列化的结构体（大小是确定的）。</typeparam>
+            <param name="msg">指令字符串</param>
+            <param name="obj">要读取的数据</param>
+            <param name="timeout">超时</param>
+            <returns>查看<seealso cref="M:uci.Session.GetLastError"/>说明。</returns>
+            <remarks>
+            比如uci.u_Field的大小就是确定的，可以使用本接口。
+            </remarks>
+        </member>
+        <member name="M:uci.Session.Error(System.Int32)">
+            <summary>
+            判断接口返回值是否错误
+            </summary>
+            <param name="r">接口返回值</param>
+            <returns>true : 正确； false ： 错误</returns>
+        </member>
+        <member name="M:uci.Session.Success(System.Int32)">
+            <summary>
+            判断接口返回值是否正确
+            </summary>
+            <param name="r">接口返回值</param>
+            <returns>true : 正确； false ： 错误</returns>
+        </member>
+        <member name="P:uci.Session.SessionID">
+            <summary>
+            获取会话ID
+            </summary>
+        </member>
+        <member name="P:uci.Session.Addr">
+            <summary>
+            设备地址，只有设备被打开时，才会存在。
+            </summary>
+        </member>
+        <member name="P:uci.Session.IsOpened">
+            <summary>
+            当前设备是否已经打开
+            </summary>
+        </member>
+        <member name="T:uci.UCIInterop">
+            <summary>
+            uci接口的C语言接口到C#接口的适配接口
+            建议不要直接使用本类中提供的方法。
+            而是使用<see cref="T:uci.Session"/>提供的方式。
+            </summary>
+        </member>
+        <member name="F:uci.UCIInterop.InvalidSession">
+            <summary>
+            无效的会话ID
+            </summary>
+        </member>
+        <member name="M:uci.UCIInterop.Open(System.String,System.UInt32@,System.UInt32)">
+            <summary>
+            打开设备，建立会话。
+            </summary>
+            <param name="_name"></param>
+            <param name="_session"></param>
+            <param name="_timeOut"></param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.QueryNodesX(System.String,uci.Node[],System.Int32,System.UInt32)">
+            <summary>
+            查询设备
+            </summary>
+            <param name="_msg">要查询的设备信息，</param>
+            <param name="_nodes">接收查询结果的节点数组</param>
+            <param name="_node_count">_nodes的个数</param>
+            <param name="_timeout">超时</param>
+            <returns>
+            小于0：错误； >=0 查询到的设备个数。
+            </returns>   
+            <remarks> 
+            查询字符串示例： LAN:4162,5000;USB:0x1234#0x5345,0x7777#0x5345;
+            格式是："{通信类型名称 : 设备参数 ;}"
+            每个通信类型数据以';'结尾；':'之前是节点名，节点名是内置的，网络通信是"LAN"，USB通信是"USB"。
+            LAN通信的参数是端口号，以','分割.
+            USB通信的参数是PID（第一个）和VID（第二个），每组数据以','号分割，PID和VID以'#'分割。
+            </remarks>    
+        </member>
+        <member name="M:uci.UCIInterop.QueryCOMPort(uci.COMPort[],System.Int32)">
+            <summary>
+            查找串口
+            </summary>
+            <param name="_nodes"></param>
+            <param name="_node_count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.Write(System.UInt32,uci.WParams@,System.Byte[],System.UInt32)">
+            <summary>
+            写数据。 新程序请直接使用<see cref="M:uci.UCIInterop.WriteX(System.UInt32,System.String,System.UInt32,System.Byte[],System.UInt32)"/>接口。
+            </summary>
+            <param name="_session">会话ID，由<see cref="M:uci.UCIInterop.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+            <param name="_params">接口参数</param>
+            <param name="_data">要写入的数据</param>
+            <param name="_len">数据长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.WriteX(System.UInt32,System.String,System.UInt32,System.Byte[],System.UInt32)">
+            <summary>
+            写数据。 是<see cref="M:uci.UCIInterop.Write(System.UInt32,uci.WParams@,System.Byte[],System.UInt32)"/>的非封装版本。
+            </summary>
+            <param name="_session">会话ID，由<see cref="M:uci.UCIInterop.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+            <param name="_msg">指令字符串</param>
+            <param name="_timeout">超时</param>
+            <param name="_data">要写入的数据</param>
+            <param name="_len">数据长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.SendCommand(System.UInt32,uci.CommandParams@)">
+            <summary>
+            
+            </summary>
+            <param name="_session">会话ID，由<see cref="M:uci.UCIInterop.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+            <param name="_params"></param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.Read(System.UInt32,uci.RParams@,System.Byte[],System.UInt32)">
+            <summary>
+            读参数
+            </summary>
+            <param name="_session">会话ID，由<see cref="M:uci.UCIInterop.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+            <param name="_info"></param>
+            <param name="_data"></param>
+            <param name="_dataLen"></param>
+            <returns></returns>       
+        </member>
+        <member name="M:uci.UCIInterop.ReadX(System.UInt32,System.String,System.UInt32,System.Byte[],System.UInt32)">
+            <summary>
+            读参数（Read的参数未封装版本）
+            </summary>
+            <param name="_session">会话ID，由<see cref="M:uci.UCIInterop.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+            <param name="_msg"></param>
+            <param name="_timeout"></param>
+            <param name="_data"></param>
+            <param name="_dataLen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.Close(System.UInt32)">
+            <summary>
+            关闭会话
+            </summary>
+            <param name="_session">会话ID，由<see cref="M:uci.UCIInterop.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.WriteFromFile(System.UInt32,uci.WFileParams@)">
+            <summary>
+            写文件到设备
+            </summary>
+            <param name="_session">会话ID，由<see cref="M:uci.UCIInterop.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+            <param name="_info"></param>
+            <returns></returns>       
+        </member>
+        <member name="M:uci.UCIInterop.WriteFromFileX(System.UInt32,System.String,System.String,System.UInt32)">
+            <summary>
+            写文件到设备，是WriteFromFile参数非封装接口
+            </summary>
+            <param name="_session">会话ID，由<see cref="M:uci.UCIInterop.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+            <param name="_msg">指令字符串</param>
+            <param name="_filePath">要发送的文件路径</param>
+            <param name="_timeout">超时s</param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.ReadToFile(System.UInt32,uci.RFileParams@)">
+            <summary>
+            读文件
+            </summary>
+            <param name="_session">会话ID，由<see cref="M:uci.UCIInterop.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+            <param name="_info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.SetAttribute(System.UInt32,System.String,System.Byte[],System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="_sesn">会话ID，由<see cref="M:uci.UCIInterop.Open(System.String,System.UInt32@,System.UInt32)"/>获得，
+            如果使用<see cref="F:uci.UCIInterop.InvalidSession"/>表示写的是全局属性。</param>
+            <param name="_msg"></param>
+            <param name="_obj"></param>
+            <param name="_objSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.SetNotify(System.Delegate)">
+            <summary>
+            添加事件订阅
+            </summary>
+            <param name="_notify"></param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.GetLastError">
+            <summary>
+            得到错误描述。接口错误码小于0，错误码定义见<see cref="T:uci.UciStatus"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.LastError">
+            <summary>
+            得到错误描述。原始接口，不要直接使用。 请使用<see cref="M:uci.UCIInterop.GetLastError"/>。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.FindUnitTypeName(System.Char)">
+            <summary>
+            获取单位类型编码对应的单位名
+            </summary>
+            <param name="_code">单位类型编码，编码定义见<seealso cref="T:uci.Model.unit.Type"/></param>
+            <returns>单位名</returns>
+        </member>
+        <member name="M:uci.UCIInterop.UnitRefresh(System.Double,uci.Model.unit.Scale,System.Double)">
+            <summary>
+            将当前单位的数值自动转换到合适的单位类型，以使数值小于进制。比如2300Hz，转换后就是2.3kHzs
+            </summary>
+            <param name="_value">当前值</param>
+            <param name="_unit_code">当前单位编码</param>
+            <param name="_scale">进制，一般为1000，比如频率的进制是1000</param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.UnitConvertTo(System.Double,System.Int32,System.Int32,System.Double)">
+            <summary>
+            将当前单位的数值转换到指定的单位。
+            </summary>
+            <param name="_cur_value">当前数值</param>
+            <param name="_cur_unit">当前单位编码</param>
+            <param name="_des_unit">要转换到的单位编码</param>
+            <param name="_scale">进制，一般为1000，比如频率的进制是1000</param>
+            <returns>返回转换后的数值，比如2.3KHz 转换为Hz就是2300Hz</returns>
+            <remarks>注意单位编码必须如EScale定义的，连续递增的量。</remarks>
+        </member>
+        <member name="M:uci.UCIInterop.GetUnitTypeName(System.Char)">
+            <summary>
+            获取单位类型编码对应的单位名
+            </summary>
+            <param name="_code">单位类型编码，编码定义见<seealso cref="T:uci.Model.unit.Type"/></param>
+            <returns>单位名</returns>
+        </member>
+        <member name="M:uci.UCIInterop.ExInstance">
+            <summary>
+            在主程序退出之前调用本接口以清除uci.dll内部资源。 
+            本接口只是针对C#接口使用。否则在退出时会有异常出现。
+            </summary>
+        </member>
+        <member name="M:uci.UCIInterop.CvtPVID(System.UInt16,System.UInt16)">
+            <summary>
+            转换PID和VID未32位整数。
+            </summary>
+            <param name="pid"></param>
+            <param name="vid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.UCIError(System.Int32)">
+            <summary>
+            判断接口返回值是否代表错误
+            </summary>
+            <param name="r">接口返回值</param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.UCISuccess(System.Int32)">
+            <summary>
+            判断接口返回值是否代表正确
+            </summary>
+            <param name="r">接口返回值</param>
+            <returns></returns>
+        </member>
+        <member name="M:uci.UCIInterop.QueryAllConnections(uci.QParams@,uci.Node[],System.UInt32@,System.Int32)">
+            <summary>
+            查询在线的设备（建议不再使用该接口，可用<see cref="M:uci.UCIInterop.QueryNodesX(System.String,uci.Node[],System.Int32,System.UInt32)"/>代替）
+            </summary>
+            <param name="param">查询参数</param>
+            <param name="n">输出设备信息的缓冲区</param>
+            <param name="readCnt">入参是要查询的设备数量，出参是已经查询到的设备数量</param>
+            <param name="timeOut">超时</param>
+            <returns>
+            &gt;=0正确，否则错误。
+            </returns>
+        </member>
+        <member name="M:uci.UCIInterop.alg_UnCompressPixels(System.UInt32[],System.UInt32,System.UInt32[],System.UInt32)">
+            <summary>
+            对压缩像素数据进行解压缩(适用于UTG4000A系列\UTG2025A NEW)
+            </summary>
+            <param name="_src">压缩之后的数据地址(按32bit寻址)</param>
+            <param name="_src_size"> 压缩的数据大小，注意是int类型。 </param>
+            <param name="_dst"> 存放解压缩后的像素数据缓冲区</param>
+            <param name="_dst_size"> 像素点数 </param>
+            <returns> 小于0 错误，错误码见UnZipError， >=0解压缩后的大小(像素数)</returns>
+            <remarks>
+            _dst缓冲区大小是屏幕宽度 * 屏幕高度， 比如800*480的屏幕，
+                    解压缩后就是 800*480 = 384000.即_dst_size = 384000.
+            </remarks>
+        </member>
+        <member name="M:uci.UCIInterop.alg_UnCompressPixels_Bytes(System.Byte[],System.UInt32,System.Byte[],System.UInt32)">
+            <summary>
+            alg_UnCompressPixels 接口的另一版本， 缓冲区全部是字节流
+            </summary>
+            <param name="_src">压缩之后的数据地址，字节流</param>
+            <param name="_src_size">字节流长度</param>
+            <param name="_dst">接收解压缩后的数据的字节流缓冲区</param>
+            <param name="_dst_size">_dst缓冲区的长度（Bytes）</param>
+            <returns>参考<see cref="M:uci.UCIInterop.alg_UnCompressPixels(System.UInt32[],System.UInt32,System.UInt32[],System.UInt32)"/></returns>       
+        </member>
+        <member name="M:uci.UCIInterop.alg_UnCompressPixels_25(System.Byte[],System.UInt32,System.Byte[],System.UInt32)">
+            <summary>
+            对压缩像素数据进行解压缩（适用于UTG2025A和UTG2062A）
+            </summary>
+            <param name="_src">压缩之后的数据地址</param>
+            <param name="_srcLen">压缩的数据大小，字节数</param>
+            <param name="_des">存放解压缩后的像素数据缓冲区</param>
+            <param name="_desLen">像素点数*3, 24bit</param>
+            <returns> 小于 0 错误，错误码见UnZipError， >=0解压缩后的大小(字节数)</returns>
+            <remarks>
+            _des缓冲区大小应该是480*272*3
+            </remarks>
+        </member>
+        <member name="M:uci.UCIInterop.alg_UnCompressPixels_1000A(System.Byte[],System.UInt32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            1000A信号源使用的图像数据的解压算法
+            </summary>
+            <param name="_src"> 从设备端读取到的完整数据包</param>
+            <param name="_srcLen">_src 指向的数据大小Bytes</param>
+            <param name="_des">输出的32bit的像素数据的缓冲区</param>
+            <param name="_width">图像的宽度</param>
+            <param name="_height">图像的高度</param>
+            <returns> 小于 0 错误，错误码见UnZipError， >=0解压缩后的像素个数</returns>       
+        </member>
+        <member name="T:uci.UCIInterop.uciNotify">
+            <summary>
+            通知事件的委托函数，由<see cref="M:uci.UCIInterop.SetNotify(System.Delegate)"/>使用。
+            </summary>
+            <param name="_msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:uci.UCIInterop.UnZipError">
+            <summary>
+            解压缩返回算法返回的错误码
+            </summary>
+        </member>
+        <member name="F:uci.UCIInterop.UnZipError.UNZIP_ARGS_INVALID">
+            <summary>
+             参数错误
+            </summary>
+        </member>
+        <member name="F:uci.UCIInterop.UnZipError.UNZIP_DES_MEMORY_NOT_ENOUGH">
+            <summary>
+            接收非压缩数据的缓冲区大小不够
+            </summary>
+        </member>
+        <member name="T:uci.Utility">
+            <summary>
+            提供一些做跨平台数据转换时的常用接口
+            </summary>
+        </member>
+        <member name="M:uci.Utility.ByteArrayToStructArray``1(System.Byte[],``0[]@,System.Int32)">
+            <summary>
+            将字节数组转换为结构体数组
+            </summary>
+            <typeparam name="T">结构体类型</typeparam>
+            <param name="src"> 被转换的字节数组</param>
+            <param name="des"> 用于数据的结构体数组</param>
+            <param name="convertCount">要转换的结构体数量</param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:uci.Utility.BytesToStuct(System.Byte[],System.Type)">
+            <summary>
+            byte数组转结构体
+            </summary>
+            <param name="bytes">byte数组</param>
+            <param name="type">结构体类型</param>
+            <returns>转换后的结构体， 转换失败返回null</returns>
+        </member>
+        <member name="M:uci.Utility.StructToBytes(System.Object)">
+            <summary>
+            结构体转byte数组
+            </summary>
+            <param name="structObj">要转换的结构体</param>
+            <returns>转换后的byte数组</returns>
+        </member>
+    </members>
+</doc>

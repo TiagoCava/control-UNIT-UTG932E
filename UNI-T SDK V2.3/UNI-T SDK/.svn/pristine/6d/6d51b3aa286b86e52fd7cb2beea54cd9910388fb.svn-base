@@ -1,0 +1,26 @@
+C# ：
+	是C#平台的示例工程
+VC\UCIDEMO\UCI_DEMO.exe ：
+	是源码工程UCIDemoProj的编译后的程序。
+	该程序是UCI通信接口的演示和测试程序。  可以对照文档测试指令和测试仪器的接口连接。
+
+VC\SimpleUCI ：
+	是简单的UCI接口的示例工程，里面演示C接口和C++两种接口使用。
+
+VB\UCIDemoVBProj.zip
+	是简单的VB接口使用的示例工程。
+
+CVI ：
+	是使用CVI开发的示例工程
+
+UCI-Labview11.0：
+	是LabView平台下的示例工程
+
+LabView-UCI ：
+	是较新的LabView平台下的使用接口和示例
+
+请根据需要选择合适的平台进行二次开发。
+
+
+
+

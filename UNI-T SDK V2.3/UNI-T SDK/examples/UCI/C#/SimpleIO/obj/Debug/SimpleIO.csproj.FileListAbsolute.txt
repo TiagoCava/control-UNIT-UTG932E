@@ -1,0 +1,8 @@
+C:\Users\MrJ\Desktop\安装程序和使用说明书\UNI-T SDK V2.3\UNI-T SDK V2.3\UNI-T SDK\examples\UCI\C#\SimpleIO\bin\Debug\SimpleIO.exe.config
+C:\Users\MrJ\Desktop\安装程序和使用说明书\UNI-T SDK V2.3\UNI-T SDK V2.3\UNI-T SDK\examples\UCI\C#\SimpleIO\bin\Debug\SimpleIO.exe
+C:\Users\MrJ\Desktop\安装程序和使用说明书\UNI-T SDK V2.3\UNI-T SDK V2.3\UNI-T SDK\examples\UCI\C#\SimpleIO\bin\Debug\SimpleIO.pdb
+C:\Users\MrJ\Desktop\安装程序和使用说明书\UNI-T SDK V2.3\UNI-T SDK V2.3\UNI-T SDK\examples\UCI\C#\SimpleIO\bin\Debug\ucics.dll
+C:\Users\MrJ\Desktop\安装程序和使用说明书\UNI-T SDK V2.3\UNI-T SDK V2.3\UNI-T SDK\examples\UCI\C#\SimpleIO\bin\Debug\ucics.xml
+C:\Users\MrJ\Desktop\安装程序和使用说明书\UNI-T SDK V2.3\UNI-T SDK V2.3\UNI-T SDK\examples\UCI\C#\SimpleIO\obj\Debug\SimpleIO.csprojResolveAssemblyReference.cache
+C:\Users\MrJ\Desktop\安装程序和使用说明书\UNI-T SDK V2.3\UNI-T SDK V2.3\UNI-T SDK\examples\UCI\C#\SimpleIO\obj\Debug\SimpleIO.exe
+C:\Users\MrJ\Desktop\安装程序和使用说明书\UNI-T SDK V2.3\UNI-T SDK V2.3\UNI-T SDK\examples\UCI\C#\SimpleIO\obj\Debug\SimpleIO.pdb

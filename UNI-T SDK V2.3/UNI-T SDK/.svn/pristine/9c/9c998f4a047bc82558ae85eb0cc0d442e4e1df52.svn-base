@@ -1,0 +1,15 @@
+初次使用，请先安装驱动：
+运行driver\DriverPack_Libusb\Installer.bat文件，按照步骤按照即可。
+
+然后，直接打开examples\UCIDemoProj示例工程，编译运行，然后先对照
+机型对应的协议文档，熟悉简单的通信指令。
+
+请查看UCIDemoProj的源码文件，获取代码级的开发演示。
+
+目录说明：
+<doc>      ： 所有文档
+<driver>   ： 驱动安装程序
+<include>  ： 相关引用文件。
+<examples> ： VC、VB、CVI和LabView的示例工程。
+<lib>      ： UCI接口库（包含C、C#和VB接口版本）
+

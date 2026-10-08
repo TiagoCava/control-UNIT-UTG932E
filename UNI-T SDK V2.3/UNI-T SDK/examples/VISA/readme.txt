@@ -1,0 +1,2 @@
+1¡¢ All instruments supporting SCPI protocol are compatible with VISA interface. For other models, refer to UCI interface for communication.
+2¡¢All examples use VISA communication and require NI-VISA 5.4 driver. If not installed, download it from NI's website (http://www.ni.com) first.

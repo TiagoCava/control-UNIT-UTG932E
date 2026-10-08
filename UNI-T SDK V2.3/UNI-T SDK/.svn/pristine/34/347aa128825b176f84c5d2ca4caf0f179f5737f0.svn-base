@@ -1,0 +1,219 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ucivb
+</name>
+</assembly>
+<members>
+<member name="F:ucivb.Node.Type">
+	<summary>
+通信接口方式。
+</summary>
+</member><member name="F:ucivb.Node.Name">
+	<summary>
+设备名。
+</summary>
+</member><member name="F:ucivb.Node.DevType">
+	<summary>
+设备类型( 信号源 = SG, 示波器 = DSO, UPO = UPO;)。
+</summary>
+</member><member name="F:ucivb.Node.LAN">
+	<summary>
+LAN口参数。
+</summary>
+</member><member name="F:ucivb.Node.USB">
+	<summary>
+USB口参数。
+</summary>
+</member><member name="F:ucivb.Node.UCIAddr">
+	<summary>
+连接字符串。
+</summary>
+</member><member name="F:ucivb.Node.SN">
+	<summary>
+序列号。
+</summary>
+</member><member name="F:ucivb.Node.Status">
+	<summary>
+设备状态。
+</summary>
+</member><member name="F:ucivb.Node.IDN">
+	<summary>
+设备显示名称。
+</summary>
+</member><member name="T:ucivb.Node">
+	<summary>
+查询到的设备节点的参数。
+</summary>
+</member><member name="F:ucivb.RFileParams.CMDString">
+	<summary>
+命令字符串，以'\0'结尾. 具体格式见文档；	
+</summary>
+</member><member name="F:ucivb.RFileParams.FilePath">
+	<summary>
+文件路径
+</summary>
+</member><member name="F:ucivb.RFileParams.TimeOut">
+	<summary>
+超时
+</summary>
+</member><member name="F:ucivb.RFileParams.FilePathFinal">
+	<summary>
+最终输出文件的路径
+</summary>
+</member><member name="T:ucivb.RFileParams">
+	<summary>
+接口ReadToFile使用的参数。
+</summary>
+</member><member name="F:ucivb.WFileParams.CMDString">
+	<summary>
+命令字符串，以'\0'结尾. 具体格式见文档；	
+</summary>
+</member><member name="F:ucivb.WFileParams.FilePath">
+	<summary>
+文件路径	
+</summary>
+</member><member name="F:ucivb.WFileParams.TimeOut">
+	<summary>
+超时	
+</summary>
+</member><member name="T:ucivb.WFileParams">
+	<summary>
+接口WriteFromFile的接口参数。
+</summary>
+</member><member name="M:ucivb.UCI.QueryNodes(System.String,ucivb.Node[],System.UInt32,System.UInt32)">
+	<summary>
+查询设备
+</summary>
+	<param name="msg">要查询的设备信息，</param>
+	<param name="nodes">接收查询结果的节点数组</param>
+	<param name="node_count">_nodes的个数</param>
+	<param name="timeOut">超时</param>
+	<returns>
+小于0：错误； &gt;=0 查询到的设备个数。
+</returns>
+	<remarks>
+	</remarks>
+</member><member name="M:ucivb.UCI.QueryNodes_Simple(System.Char[],System.Int32,System.Int32,System.UInt32)">
+	<summary>
+简单版查询设备
+</summary>
+	<param name="addr_msg">要查询的设备信息，以逗号形式隔开每一个设备地址，{设备地址1，设备地址2，设备地址3......}</param>
+	<param name="addr_msg_len">所有设备信息总长度</param>
+	<param name="node_type">设备接口类型，16表示USB，1表示LAN</param>
+	<param name="timeOut">超时</param>
+	<returns>
+小于0：错误； &gt;=0 查询到的设备个数。
+</returns>
+	<remarks>
+	</remarks>
+</member><member name="M:ucivb.UCI.Open(System.String,System.UInt32@,System.UInt32)">
+	<summary>
+打开设备，建立会话。
+</summary>
+	<param name="name"></param>
+	<param name="session"></param>
+	<param name="timeOut"></param>
+	<returns></returns>
+</member><member name="M:ucivb.UCI.Open_Simple(System.String,System.UInt32)">
+	<summary>
+简单版打开设备，返回会话。
+</summary>
+	<param name="name"></param>
+	<param name="timeOut"></param>
+	<returns>session</returns>
+</member><member name="M:ucivb.UCI.Close(System.UInt32)">
+	<summary>
+关闭会话。
+</summary>
+	<param name="session"></param>
+	<returns></returns>
+</member><member name="M:ucivb.UCI.WriteX(System.UInt32,System.String,System.UInt32,System.Byte[],System.UInt32)">
+	<summary>
+写数据。 是<see cref="M:ucivb.UCI.Write(System.UInt32,System.String,System.UInt32)"/>的非封装版本。
+</summary>
+	<param name="session">会话ID，由<see cref="M:ucivb.UCI.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+	<param name="msg">指令字符串</param>
+	<param name="timeout">超时</param>
+	<param name="data">要写入的数据</param>
+	<param name="dataLen">数据长度</param>
+	<returns></returns>
+</member><member name="M:ucivb.UCI.Write(System.UInt32,System.String,System.UInt32)">
+	<summary>
+简单版写字符串数据。 是<see cref="M:ucivb.UCI.WriteX(System.UInt32,System.String,System.UInt32,System.Byte[],System.UInt32)"/>的非封装版本。
+</summary>
+	<param name="session">会话ID，由<see cref="M:ucivb.UCI.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+	<param name="msg">指令字符串</param>
+	<param name="timeout">超时</param>
+	<returns></returns>
+</member><member name="M:ucivb.UCI.Read(System.UInt32,System.String,System.UInt32,System.Byte[],System.UInt32)">
+	<summary>
+读参数（Read的参数未封装版本）
+</summary>
+	<param name="session">会话ID，由<see cref="M:ucivb.UCI.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+	<param name="msg">写入的指令</param>
+	<param name="timeout">超时</param>
+	<param name="data">接收数据缓存</param>
+	<param name="dataLen">想要读的数据长度</param>
+	<returns>读到的数据长度</returns>
+</member><member name="M:ucivb.UCI.WriteFromFile(System.UInt32,ucivb.WFileParams@)">
+	<summary>
+写文件到设备
+</summary>
+	<param name="session">会话ID，由<see cref="M:ucivb.UCI.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+	<param name="info">文件信息</param>
+	<returns></returns>
+</member><member name="M:ucivb.UCI.WriteFromFileX(System.UInt32,System.String,System.String,System.UInt32)">
+	<summary>
+简单版写文件到设备，不需定义结构体
+</summary>
+	<param name="session">会话ID，由<see cref="M:ucivb.UCI.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+	<param name="msg">指令</param>
+	<param name="filePath">文件路径</param>
+	<param name="timeOut">超时</param>
+	<returns></returns>
+</member><member name="M:ucivb.UCI.ReadToFile(System.UInt32,ucivb.RFileParams@)">
+	<summary>
+读文件
+</summary>
+	<param name="session">会话ID，由<see cref="M:ucivb.UCI.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+	<param name="info">文件信息</param>
+	<returns></returns>
+</member><member name="M:ucivb.UCI.ReadToFileX(System.UInt32,System.String,System.String,System.UInt32,System.Char[],System.Int32)">
+	<summary>
+简单版读文件，不需定义结构体
+</summary>
+	<param name="session">会话ID，由<see cref="M:ucivb.UCI.Open(System.String,System.UInt32@,System.UInt32)"/>获得</param>
+	<param name="msg">指令</param>
+	<param name="filePath">文件路径</param>
+	<param name="timeOut">超时</param>
+	<param name="filePathFinal">输出文件的最后全路径</param>
+	<param name="filePathFinalLength">全路径长度</param>
+	<returns></returns>
+</member><member name="M:ucivb.UCI.LastError">
+	<summary>
+得到错误描述。原始接口，不要直接使用。 请使用<see cref="M:ucivb.UCI.GetLastError"/>。
+</summary>
+	<returns></returns>
+</member><member name="M:ucivb.UCI.GetLastError">
+	<summary>
+得到错误描述字符串。接口错误码小于0
+</summary>
+	<returns></returns>
+</member><member name="P:ucivb.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:ucivb.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:ucivb.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,7 @@
+版本：V2.2
+日期：2018年12月28日
+修改：
+1、更新uci.dll； 解决UTD2000CEX\UTD7000BG系列示波器中的相关BUG；
+2、发布x64版本的uci.dll（.\lib\C\x64）
+3、发布x64版本的UCI_DEMO  (.\examples\VC\UCIDEMO\x64\UNICODE）
+4、修改UTP3000C&\UTP8000M系列电源的文档描述，添加示例代码；

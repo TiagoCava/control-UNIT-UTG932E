@@ -1,0 +1,23 @@
+C:\Users\Public\Documents\National Instruments\NI-VISA\Examples\.NET Nonstandard\4.5.1\SimpleReadWrite\cs\bin\Debug\SimpleReadWrite.exe
+C:\Users\Public\Documents\National Instruments\NI-VISA\Examples\.NET Nonstandard\4.5.1\SimpleReadWrite\cs\bin\Debug\SimpleReadWrite.pdb
+C:\Users\Public\Documents\National Instruments\NI-VISA\Examples\.NET Nonstandard\4.5.1\SimpleReadWrite\cs\bin\Debug\NationalInstruments.Common.dll
+C:\Users\Public\Documents\National Instruments\NI-VISA\Examples\.NET Nonstandard\4.5.1\SimpleReadWrite\cs\bin\Debug\NationalInstruments.NiLmClientDLL.dll
+C:\Users\Public\Documents\National Instruments\NI-VISA\Examples\.NET Nonstandard\4.5.1\SimpleReadWrite\cs\bin\Debug\NationalInstruments.MStudioCLM.dll
+C:\Users\Public\Documents\National Instruments\NI-VISA\Examples\.NET Nonstandard\4.5.1\SimpleReadWrite\cs\bin\Debug\NationalInstruments.Common.xml
+C:\Users\Public\Documents\National Instruments\NI-VISA\Examples\.NET Nonstandard\4.5.1\SimpleReadWrite\cs\obj\Debug\SimpleReadWrite.2013.csprojResolveAssemblyReference.cache
+C:\Users\Public\Documents\National Instruments\NI-VISA\Examples\.NET Nonstandard\4.5.1\SimpleReadWrite\cs\obj\Debug\NationalInstruments.Examples.SimpleReadWrite.MainForm.resources
+C:\Users\Public\Documents\National Instruments\NI-VISA\Examples\.NET Nonstandard\4.5.1\SimpleReadWrite\cs\obj\Debug\NationalInstruments.Examples.SimpleReadWrite.SelectResource.resources
+C:\Users\Public\Documents\National Instruments\NI-VISA\Examples\.NET Nonstandard\4.5.1\SimpleReadWrite\cs\obj\Debug\SimpleReadWrite.2013.csproj.GenerateResource.Cache
+C:\Users\Public\Documents\National Instruments\NI-VISA\Examples\.NET Nonstandard\4.5.1\SimpleReadWrite\cs\obj\Debug\SimpleReadWrite.exe
+C:\Users\Public\Documents\National Instruments\NI-VISA\Examples\.NET Nonstandard\4.5.1\SimpleReadWrite\cs\obj\Debug\SimpleReadWrite.pdb
+C:\Users\MrJ\Desktop\二次开发包\cs\obj\Debug\SimpleReadWrite.exe
+C:\Users\MrJ\Desktop\二次开发包\cs\obj\Debug\SimpleReadWrite.pdb
+C:\Users\MrJ\Desktop\二次开发包\cs\bin\Debug\SimpleReadWrite.exe
+C:\Users\MrJ\Desktop\二次开发包\cs\bin\Debug\SimpleReadWrite.pdb
+C:\Users\MrJ\Desktop\二次开发包\cs\bin\Debug\NationalInstruments.Common.dll
+C:\Users\MrJ\Desktop\二次开发包\cs\bin\Debug\NationalInstruments.NiLmClientDLL.dll
+C:\Users\MrJ\Desktop\二次开发包\cs\bin\Debug\NationalInstruments.MStudioCLM.dll
+C:\Users\MrJ\Desktop\二次开发包\cs\bin\Debug\NationalInstruments.Common.xml
+C:\Users\MrJ\Desktop\二次开发包\cs\obj\Debug\NationalInstruments.Examples.SimpleReadWrite.MainForm.resources
+C:\Users\MrJ\Desktop\二次开发包\cs\obj\Debug\NationalInstruments.Examples.SimpleReadWrite.SelectResource.resources
+C:\Users\MrJ\Desktop\二次开发包\cs\obj\Debug\SimpleReadWrite.2013.csproj.GenerateResource.Cache
